@@ -49,12 +49,10 @@ class Car {
 
   render() {
     return `
-      <div class="card h-100">
-        <img src="${
-          this.image
-        }" class="card-img-top" style="object-fit: cover; height: 300px" alt="...">
+      <div class="card">
+        <img src="${this.image}" class="card-img-top" style="object-fit: cover; height: 300px" alt="...">
         <div class="card-body">
-          <h5 class="card-title">${this.manufacture} ${this.model}</h5>
+          <h5 class="card-title"> <b>${this.manufacture} ${this.model} </b></h5>
           <p class="card-text fw-bold">${this.formatRupiah(
             this.rentPerDay
           )} / hari</p>
@@ -75,7 +73,14 @@ class Car {
       <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
       </svg> Tahun ${this.year} </div>
         </div>
-      </div>
-    `;
+      </div>    `
   }
-}
+
+  isEmpty() {
+    return `<div class="card text-center bg-danger"><div class="card-body">
+    <h1 class="card-title py-2>Tidak ada mobil</h1>
+  </div>
+</div>
+  `
+  }
+};
