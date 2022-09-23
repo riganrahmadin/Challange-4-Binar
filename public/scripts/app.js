@@ -11,12 +11,9 @@ class App {
   async init() {
     await this.load();
 
-    //Register click listener
 
     this.loadButton.onclick = this.run;
-    //console.log(this.loadButton);
     this.clearButton.onclick = this.clear;
-    //console.log(this.clearButton);
   }
 
   run = () => {
@@ -27,8 +24,6 @@ class App {
 
     const newDateTime = new Date(`${dateValue} ${timevalue}`);
     const epochTime = newDateTime.getTime();
-
-    //console.log(dateValue, timevalue, capacityValue, newDateTime, epochTime);
 
     this.load(epochTime, capacityValue);
   };
